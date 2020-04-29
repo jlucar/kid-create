@@ -1,0 +1,22 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -f Dockerfile.dev -t jlucar/kid-create .
+
+script:
+  - docker run -e CI=true jlucar/kid-create npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "kid-create"
+  env: "KidCreate-env"
+  bucket_namne: "elasticbeanstalk-us-west-2-114795878898"
+  bucket_path: "kid-create"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
