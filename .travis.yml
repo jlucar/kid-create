@@ -13,8 +13,8 @@ deploy:
   provider: elasticbeanstalk
   region: "us-west-2"
   app: "kid-create"
-  env: "KidCreate-env"
-  bucket_namne: "elasticbeanstalk-us-west-2-114795878898"
+  env: "KidCreate-env-1"
+  bucket_name: "elasticbeanstalk-us-west-2-114795878898"
   bucket_path: "kid-create"
   on:
     branch: master
