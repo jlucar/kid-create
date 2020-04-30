@@ -44,16 +44,6 @@ import { ReactComponent as AttachedEarlobe } from '../assets/images/attached-ear
 import { ReactComponent as Freckles } from '../assets/images/freckles.svg';
 
 class BabyCanvas extends React.Component {
-  state = {
-    isMale: false
-  };
-
-  isMale() {
-    return this.props.genotypes.find( genotype => {
-      return genotype.name === 'Sex' && genotype.inheritedGeneName === 'Male';
-    });
-  }
-
   renderGenotype = ( genotype ) => {
     if ( genotype.name === 'Sex' ) {
       if ( genotype.inheritedGeneName === 'Male' ) {
@@ -74,19 +64,19 @@ class BabyCanvas extends React.Component {
     } else if ( genotype.name === 'Hair Type' ) {
       if ( genotype.inheritedGeneName === 'Curly') {
         if ( this.props.config.isMale )
-          return <ManCurlyHair style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
+          return <ManCurlyHair className="hair" style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
         else
-          return <WomanCurlyHair style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
+          return <WomanCurlyHair className="hair" style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
       } else if ( genotype.inheritedGeneName === 'Wavy') {
         if ( this.props.config.isMale )
-          return <ManWavyHair style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
+          return <ManWavyHair className="hair" style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
         else
-          return <WomanWavyHair style={{ position: 'absolute', top: 78, left: 70, zIndex: 0 }} />;
+          return <WomanWavyHair className="hair" style={{ position: 'absolute', top: 78, left: 70, zIndex: 0 }} />;
       } else {
         if ( this.props.config.isMale )
-          return <ManStraightHair style={{ position: 'absolute', top: 66, left: 102, zIndex: 0 }} />;
+          return <ManStraightHair className="hair" style={{ position: 'absolute', top: 66, left: 102, zIndex: 0 }} />;
         else
-          return <WomanStraightHair style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
+          return <WomanStraightHair className="hair" style={{ position: 'absolute', top: 76, left: 64, zIndex: 0 }} />;
       }
     } else if ( genotype.name === 'Eye Shape' ) {
       if ( genotype.inheritedGeneName === 'Almond') {
@@ -135,8 +125,8 @@ class BabyCanvas extends React.Component {
       } else {
         return (
           <div>
-            <Eye style={{ position: 'absolute', top: 144, left: 124, width: '24px', zIndex: 5 }} />
-            <Eye style={{ position: 'absolute', top: 144, left: 194, width: '24px', zIndex: 5 }} />
+            <Eye className="eye-blue" style={{ position: 'absolute', top: 144, left: 124, width: '24px', zIndex: 5 }} />
+            <Eye className="eye-blue" style={{ position: 'absolute', top: 144, left: 194, width: '24px', zIndex: 5 }} />
           </div>
         );
       }
@@ -153,8 +143,8 @@ class BabyCanvas extends React.Component {
         else {
           return (
             <div>
-              <WomanThickEyebrow style={{ position: 'absolute', top: 130, left: 106, zIndex: 6 }} />
-              <WomanThickEyebrow style={{ position: 'absolute', top: 130, left: 176, transform: 'scaleX( -1 )', zIndex: 6 }} />
+              <WomanThickEyebrow className="eyebrow" style={{ position: 'absolute', top: 130, left: 106, zIndex: 6 }} />
+              <WomanThickEyebrow className="eyebrow" style={{ position: 'absolute', top: 130, left: 176, transform: 'scaleX( -1 )', zIndex: 6 }} />
             </div>
           );
         }
@@ -238,8 +228,9 @@ class BabyCanvas extends React.Component {
   }
 
   render(){
+    const className = `seven wide column ${ this.props.config.isMale ? 'sex-male' : 'sex-female' }  ${ this.props.config.isHairBlonde ? 'hair-blonde' : 'hair-brown' }  ${ this.props.config.skinColor ? 'skin-' + this.props.config.skinColor : '' }`;
     return (
-      <div className="seven wide column" style={{ height: '100vh', position: 'fixed', right: 0 }}>
+      <div className={ className } style={{ height: '100vh', position: 'fixed', right: 0 }}>
         { this.renderFace() }
       </div>
     );

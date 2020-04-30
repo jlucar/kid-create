@@ -1,5 +1,26 @@
 /* thick lips */
-#path4586-2,
-#path4588-1-8 {
+.sex-male #path4586-2,
+.sex-male #path4588-1-8 {
   fill: #c48865;
+}
+
+/* eye color */
+.eye-blue #ellipse11495 {
+  fill: #49B0DC;
+}
+
+/* hair color */
+.hair-brown .hair [id="1526766055"],
+.hair-brown .hair [id="path25418"] {
+  fill: #64370A;
+}
+
+.hair-blonde .hair [id="1526766055"],
+.hair-blonde .hair [id="path25418"] {
+  fill: #D3BC5F;
+}
+
+/* eyebrow */
+.eyebrow [id="1526766055"] {
+  fill: #64370A;
 }
