@@ -4,7 +4,7 @@ import BabyCanvas from './BabyCanvas';
 
 const App = () => {
   return (
-    <div className="ui grid">
+    <div className="ui grid" style={{ margin: '1rem' }}>
       <BabyQuestions />
       <BabyCanvas />
     </div>
