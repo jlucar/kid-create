@@ -18,7 +18,9 @@ const configReducer = ( state = { isMale: false }, action ) => {
       if ( action.payload.name === 'Sex' && action.payload.inheritedGeneName === 'Male' )
         return { ...state, isMale: true };
       else if ( action.payload.name === 'Hair Colour' && action.payload.inheritedGeneName === 'Blonde' )
-        return { ...state, isHairBlonde: true };
+        return { ...state, hairColor: 'blonde' };
+      else if ( action.payload.name === 'Hair Colour' && action.payload.inheritedGeneName === 'Brown' )
+        return { ...state, hairColor: 'brown' };
       else if ( action.payload.name === 'Skin Colour' && action.payload.inheritedGeneName === 'Light' )
         return { ...state, skinColor: 'light' };
       else if ( action.payload.name === 'Skin Colour' && action.payload.inheritedGeneName === 'Medium' )

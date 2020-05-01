@@ -10,6 +10,11 @@
 }
 
 /* hair color */
+.hair [id="1526766055"],
+.hair [id="path25418"] {
+  fill: #FFF;
+}
+
 .hair-brown .hair [id="1526766055"],
 .hair-brown .hair [id="path25418"] {
   fill: #64370A;
@@ -23,4 +28,72 @@
 /* eyebrow */
 .eyebrow [id="1526766055"] {
   fill: #64370A;
+}
+
+/* face shape */
+.face-shape [id="1526766055"] {
+  fill: #FFF;
+}
+
+.skin-light .face-shape [id="1526766055"] {
+  fill: #D0AB96;
+}
+
+.skin-medium .face-shape [id="1526766055"] {
+  fill: #CD8D67;
+}
+
+.skin-dark .face-shape [id="1526766055"] {
+  fill: #AC663C;
+}
+
+/* cleft chin */
+.cleft-chin [id="1526766055"] {
+  fill: #FFF;
+}
+
+.skin-light .cleft-chin [id="1526766055"] {
+  fill: #D0AB96;
+}
+
+.skin-medium .cleft-chin [id="1526766055"] {
+  fill: #CD8D67;
+}
+
+.skin-dark .cleft-chin [id="1526766055"] {
+  fill: #AC663C;
+}
+
+/* nose shape */
+.nose-shape [id="1526766055"] {
+  fill: #FFF;
+}
+
+.skin-light .nose-shape [id="1526766055"] {
+  fill: #D0AB96;
+}
+
+.skin-medium .nose-shape [id="1526766055"] {
+  fill: #CD8D67;
+}
+
+.skin-dark .nose-shape [id="1526766055"] {
+  fill: #AC663C;
+}
+
+/* earlobes */
+.earlobe [id="1526766055"] {
+  fill: #FFF;
+}
+
+.skin-light .earlobe [id="1526766055"] {
+  fill: #D0AB96;
+}
+
+.skin-medium .earlobe [id="1526766055"] {
+  fill: #CD8D67;
+}
+
+.skin-dark .earlobe [id="1526766055"] {
+  fill: #AC663C;
 }

@@ -45,17 +45,6 @@ export const genotypesDefault = {
   },
   5: {
     id: 5,
-    type: 1,
-    name: "Hair Colour",
-    combinations: {
-      TT: "Brown",
-      Tt: "Brown",
-      tT: "Brown",
-      tt: "Blonde"
-    }
-  },
-  6: {
-    id: 6,
     type: 2,
     name: "Hair Type",
     combinations: {
@@ -63,6 +52,17 @@ export const genotypesDefault = {
       Tt: "Wavy",
       tT: "Wavy",
       tt: "Straight"
+    }
+  },
+  6: {
+    id: 6,
+    type: 1,
+    name: "Hair Colour",
+    combinations: {
+      TT: "Brown",
+      Tt: "Brown",
+      tT: "Brown",
+      tt: "Blonde"
     }
   },
   7: {
@@ -79,23 +79,23 @@ export const genotypesDefault = {
   8: {
     id: 8,
     type: 1,
-    name: "Eye Colour",
-    combinations: {
-      TT: "Brown",
-      Tt: "Brown",
-      tT: "Brown",
-      tt: "Blue"
-    }
-  },
-  9: {
-    id: 9,
-    type: 1,
     name: "Eye Shape",
     combinations: {
       TT: "Almond",
       Tt: "Almond",
       tT: "Almond",
       tt: "Round"
+    }
+  },
+  9: {
+    id: 9,
+    type: 1,
+    name: "Eye Colour",
+    combinations: {
+      TT: "Brown",
+      Tt: "Brown",
+      tT: "Brown",
+      tt: "Blue"
     }
   },
   10: {

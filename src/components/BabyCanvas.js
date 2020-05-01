@@ -53,28 +53,28 @@ class BabyCanvas extends React.Component {
         return <i className="huge female icon"></i>;
     } else if ( genotype.name === 'Face Shape' ) {
       if ( genotype.inheritedGeneName === 'Round' )
-        return <RoundFace style={{ position: 'absolute', top: 100, left: 100, zIndex: 1 }} />;
+        return <RoundFace className="face-shape" style={{ position: 'absolute', top: 100, left: 100, zIndex: 1 }} />;
       else
-        return <SquareFace style={{ position: 'absolute', top: 100, left: 98, zIndex: 1 }} />;
+        return <SquareFace className="face-shape" style={{ position: 'absolute', top: 100, left: 98, zIndex: 1 }} />;
     } else if ( genotype.name === 'Presence of Chin Cleft' ) {
       if ( genotype.inheritedGeneName === 'Cleft Chin' )
-        return <CleftChin style={{ position: 'absolute', top: 232, left: 145, zIndex: 2 }} />;
+        return <CleftChin className="cleft-chin" style={{ position: 'absolute', top: 232, left: 145, zIndex: 2 }} />;
       else
         return null;
     } else if ( genotype.name === 'Hair Type' ) {
       if ( genotype.inheritedGeneName === 'Curly') {
         if ( this.props.config.isMale )
-          return <ManCurlyHair className="hair" style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
+          return <ManCurlyHair className="hair" style={{ position: 'absolute', top: 66, left: 86, zIndex: 1 }} />;
         else
           return <WomanCurlyHair className="hair" style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
       } else if ( genotype.inheritedGeneName === 'Wavy') {
         if ( this.props.config.isMale )
-          return <ManWavyHair className="hair" style={{ position: 'absolute', top: 66, left: 86, zIndex: 0 }} />;
+          return <ManWavyHair className="hair" style={{ position: 'absolute', top: 66, left: 86, zIndex: 1 }} />;
         else
           return <WomanWavyHair className="hair" style={{ position: 'absolute', top: 78, left: 70, zIndex: 0 }} />;
       } else {
         if ( this.props.config.isMale )
-          return <ManStraightHair className="hair" style={{ position: 'absolute', top: 66, left: 102, zIndex: 0 }} />;
+          return <ManStraightHair className="hair" style={{ position: 'absolute', top: 66, left: 102, zIndex: 1 }} />;
         else
           return <WomanStraightHair className="hair" style={{ position: 'absolute', top: 76, left: 64, zIndex: 0 }} />;
       }
@@ -84,15 +84,15 @@ class BabyCanvas extends React.Component {
           return (
             <div>
               <ManAlmondEyeShape style={{ position: 'absolute', top: 140, left: 112, zIndex: 4 }} />
-              <ManAlmondEyeShape style={{ position: 'absolute', top: 140, left: 182, transform: 'scaleX( -1 )', zIndex: 4 }} />
+              <ManAlmondEyeShape style={{ position: 'absolute', top: 140, left: 180, transform: 'scaleX( -1 )', zIndex: 4 }} />
             </div>
           );
         }
         else {
           return (
             <div>
-              <WomanAlmondEyeShape style={{ position: 'absolute', top: 140, left: 101, zIndex: 4 }} />
-              <WomanAlmondEyeShape style={{ position: 'absolute', top: 140, left: 184, transform: 'scaleX( -1 )', zIndex: 4 }} />
+              <WomanAlmondEyeShape style={{ position: 'absolute', top: 139, left: 101, zIndex: 4 }} />
+              <WomanAlmondEyeShape style={{ position: 'absolute', top: 139, left: 182, transform: 'scaleX( -1 )', zIndex: 4 }} />
             </div>
           );
         }
@@ -108,8 +108,8 @@ class BabyCanvas extends React.Component {
         else {
           return (
             <div>
-              <WomanRoundEyeShape style={{ position: 'absolute', top: 140, left: 112, zIndex: 4 }} />
-              <WomanRoundEyeShape style={{ position: 'absolute', top: 140, left: 182, transform: 'scaleX( -1 )', zIndex: 4 }} />
+              <WomanRoundEyeShape style={{ position: 'absolute', top: 140, left: 109, height: '27px', zIndex: 4 }} />
+              <WomanRoundEyeShape style={{ position: 'absolute', top: 140, left: 179, height: '27px', transform: 'scaleX( -1 )', zIndex: 4 }} />
             </div>
           );
         }
@@ -118,15 +118,15 @@ class BabyCanvas extends React.Component {
       if ( genotype.inheritedGeneName === 'Brown') {
         return (
           <div>
-            <Eye style={{ position: 'absolute', top: 144, left: 124, width: '24px', zIndex: 5 }} />
-            <Eye style={{ position: 'absolute', top: 144, left: 194, width: '24px', zIndex: 5 }} />
+            <Eye style={{ position: 'absolute', top: 142, left: 125, width: '22px', zIndex: 5 }} />
+            <Eye style={{ position: 'absolute', top: 142, left: 193, width: '22px', zIndex: 5 }} />
           </div>
         );
       } else {
         return (
           <div>
-            <Eye className="eye-blue" style={{ position: 'absolute', top: 144, left: 124, width: '24px', zIndex: 5 }} />
-            <Eye className="eye-blue" style={{ position: 'absolute', top: 144, left: 194, width: '24px', zIndex: 5 }} />
+            <Eye className="eye-blue" style={{ position: 'absolute', top: 142, left: 125, width: '22px', zIndex: 5 }} />
+            <Eye className="eye-blue" style={{ position: 'absolute', top: 142, left: 193, width: '22px', zIndex: 5 }} />
           </div>
         );
       }
@@ -136,7 +136,7 @@ class BabyCanvas extends React.Component {
           return (
             <div>
               <ManThickEyebrow style={{ position: 'absolute', top: 130, left: 110, zIndex: 6 }} />
-              <ManThickEyebrow style={{ position: 'absolute', top: 130, left: 180, transform: 'scaleX( -1 )', zIndex: 6 }} />
+              <ManThickEyebrow style={{ position: 'absolute', top: 130, left: 178, transform: 'scaleX( -1 )', zIndex: 6 }} />
             </div>
           );
         }
@@ -179,9 +179,9 @@ class BabyCanvas extends React.Component {
       }
     } else if ( genotype.name === 'Nose Shape' ) {
       if ( genotype.inheritedGeneName === 'Rounded' )
-        return <RoundedNoseShape style={{ position: 'absolute', top: 166, left: 155, zIndex: 8 }} />;
+        return <RoundedNoseShape className="nose-shape" style={{ position: 'absolute', top: 166, left: 155, zIndex: 8 }} />;
       else
-        return <PointedNoseShape style={{ position: 'absolute', top: 166, left: 155, zIndex: 8 }} />;
+        return <PointedNoseShape className="nose-shape" style={{ position: 'absolute', top: 166, left: 155, zIndex: 8 }} />;
     } else if ( genotype.name === 'Lip Thickness' ) {
       if ( genotype.inheritedGeneName === 'Thick' )
         return <ThickLips style={{ position: 'absolute', top: 198, left: 148, zIndex: 9 }} />;
@@ -191,15 +191,15 @@ class BabyCanvas extends React.Component {
       if ( genotype.inheritedGeneName === 'Free' ){
         return (
           <div>
-            <FreeEarlobe style={{ position: 'absolute', top: 144, left: 84, zIndex: 10 }} />
-            <FreeEarlobe style={{ position: 'absolute', top: 144, left: 228, transform: 'scaleX( -1 )', zIndex: 10 }} />
+            <FreeEarlobe className="earlobe" style={{ position: 'absolute', top: 148, left: 84, zIndex: 10 }} />
+            <FreeEarlobe className="earlobe" style={{ position: 'absolute', top: 148, left: 228, transform: 'scaleX( -1 )', zIndex: 10 }} />
           </div>
         );
       } else {
         return (
           <div>
-            <AttachedEarlobe style={{ position: 'absolute', top: 144, left: 84, zIndex: 10 }} />
-            <AttachedEarlobe style={{ position: 'absolute', top: 144, left: 228, transform: 'scaleX( -1 )', zIndex: 10 }} />
+            <AttachedEarlobe className="earlobe" style={{ position: 'absolute', top: 148, left: 84, zIndex: 10 }} />
+            <AttachedEarlobe className="earlobe" style={{ position: 'absolute', top: 148, left: 228, transform: 'scaleX( -1 )', zIndex: 10 }} />
           </div>
         );
       }
@@ -207,8 +207,8 @@ class BabyCanvas extends React.Component {
       if ( genotype.inheritedGeneName === 'Freckles' ){
         return (
           <div>
-            <Freckles style={{ position: 'absolute', top: 176, left: 114, zIndex: 11 }} />
-            <Freckles style={{ position: 'absolute', top: 176, left: 194, transform: 'scaleX( -1 )', zIndex: 11 }} />
+            <Freckles className="freckles" style={{ position: 'absolute', top: 176, left: 114, zIndex: 11 }} />
+            <Freckles className="freckles" style={{ position: 'absolute', top: 176, left: 194, transform: 'scaleX( -1 )', zIndex: 11 }} />
           </div>
         );
       } else {
@@ -228,7 +228,7 @@ class BabyCanvas extends React.Component {
   }
 
   render(){
-    const className = `seven wide column ${ this.props.config.isMale ? 'sex-male' : 'sex-female' }  ${ this.props.config.isHairBlonde ? 'hair-blonde' : 'hair-brown' }  ${ this.props.config.skinColor ? 'skin-' + this.props.config.skinColor : '' }`;
+    const className = `seven wide column ${ this.props.config.isMale ? 'sex-male' : 'sex-female' }  ${ this.props.config.hairColor ? 'hair-' + this.props.config.hairColor : '' }  ${ this.props.config.skinColor ? 'skin-' + this.props.config.skinColor : '' }`;
     return (
       <div className={ className } style={{ height: '100vh', position: 'fixed', right: 0 }}>
         { this.renderFace() }
