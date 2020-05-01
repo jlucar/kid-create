@@ -13,25 +13,52 @@ class GenotypeCard extends React.Component {
     );
   }
 
+  renderSexGenotypeResult = () => {
+    if ( this.props.genotype.fatherGene + this.props.genotype.motherGene === 'TT' ||
+      this.props.genotype.fatherGene + this.props.genotype.motherGene === 'tt' ) {
+        return <div className="value">XX</div>;
+      }
+
+    if ( this.props.genotype.fatherGene + this.props.genotype.motherGene === 'Tt' ||
+      this.props.genotype.fatherGene + this.props.genotype.motherGene === 'tT' ) {
+        return <div className="value">XY</div>;
+      }
+  }
+
   renderGenotypeResults = () => {
     return (
       <div className="description">
-        Inherited Genotypes:&nbsp;&nbsp;
+        Genotype:&nbsp;&nbsp;
         <div className="ui mini horizontal statistic">
-          <div className="value" style={{ textTransform: 'none' }}>{ this.props.genotype.fatherGene } { this.props.genotype.motherGene }</div>
+          { this.props.genotype.name === 'Sex' ?
+          this.renderSexGenotypeResult()
+          :
+          (
+            <div className="value" style={{ textTransform: 'none' }}>{ this.props.genotype.fatherGene } { this.props.genotype.motherGene }</div>
+          )
+          }
         </div>
       </div>
     );
   }
 
   renderGenotypeOptions = () => {
-    return (
-      <div className="ui three bottom attached buttons">
-        <GenotypeOption genotype={ this.props.genotype } label="Homozygous Dominant" value={ [ 'TT' ] } />
-        <GenotypeOption genotype={ this.props.genotype } label="Heterozygous" value={ [ 'Tt', 'tT' ] } />
-        <GenotypeOption genotype={ this.props.genotype } label="Homozygous Recessive" value={ [ 'tt' ] } />
-      </div>
-    );
+    if ( this.props.genotype.name === 'Sex' ) {
+      return (
+        <div className="ui two bottom attached buttons">
+          <GenotypeOption genotype={ this.props.genotype } label="Male" value={ [ 'TT', 'tt' ] } />
+          <GenotypeOption genotype={ this.props.genotype } label="Female" value={ [ 'Tt', 'tT' ] } />
+        </div>
+      );
+    } else {
+      return (
+        <div className="ui three bottom attached buttons">
+          <GenotypeOption genotype={ this.props.genotype } label="Homozygous Dominant" value={ [ 'TT' ] } />
+          <GenotypeOption genotype={ this.props.genotype } label="Heterozygous" value={ [ 'Tt', 'tT' ] } />
+          <GenotypeOption genotype={ this.props.genotype } label="Homozygous Recessive" value={ [ 'tt' ] } />
+        </div>
+      );
+    }
   }
 
   render() {
