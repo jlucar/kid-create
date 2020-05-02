@@ -2,6 +2,8 @@ import './BabyCanvas.css';
 import React from 'react';
 import { connect } from 'react-redux';
 
+import domtoimage from 'dom-to-image';
+
 import { ReactComponent as SquareFace } from '../assets/images/square-face.svg';
 import { ReactComponent as RoundFace } from '../assets/images/round-face.svg';
 
@@ -227,11 +229,36 @@ class BabyCanvas extends React.Component {
     });
   }
 
+  filterITags = ( node ) => {
+    return ( node.tagName !== 'i' && node.tagName !== 'I' );
+  }
+
+  downloadGeneratedBaby = () => {
+    domtoimage.toPng( document.getElementById('generated-kid'), { filter: this.filterITags } )
+      .then( dataUrl => {
+        let link = document.createElement( 'a' );
+        link.download = 'my-generated-kid.png';
+        link.href = dataUrl;
+        link.click();
+      });
+  }
+
+  allGenerated = () => {
+    return this.props.genotypes.every( genotype => genotype.draw );
+  }
+
   render(){
     const className = `seven wide column ${ this.props.config.isMale ? 'sex-male' : 'sex-female' }  ${ this.props.config.hairColor ? 'hair-' + this.props.config.hairColor : '' }  ${ this.props.config.skinColor ? 'skin-' + this.props.config.skinColor : '' }`;
     return (
-      <div className={ className } style={{ height: '100vh', position: 'fixed', right: 0 }}>
-        { this.renderFace() }
+      <div className={ className } style={{ position: 'fixed', right: 0 }}>
+        { this.allGenerated() ? (
+          <button className="ui primary button" onClick={ this.downloadGeneratedBaby }>Download Generated Kid</button>
+        )
+        : null
+        }
+        <div id="generated-kid" style={{ height: '100vh' }}>
+          { this.renderFace() }
+        </div>
       </div>
     );
   }
