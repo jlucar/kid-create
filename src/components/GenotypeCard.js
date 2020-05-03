@@ -16,12 +16,12 @@ class GenotypeCard extends React.Component {
   renderSexGenotypeResult = () => {
     if ( this.props.genotype.fatherGene + this.props.genotype.motherGene === 'TT' ||
       this.props.genotype.fatherGene + this.props.genotype.motherGene === 'tt' ) {
-        return <div className="value">XX</div>;
+        return <div className="value">Y</div>;
       }
 
     if ( this.props.genotype.fatherGene + this.props.genotype.motherGene === 'Tt' ||
       this.props.genotype.fatherGene + this.props.genotype.motherGene === 'tT' ) {
-        return <div className="value">XY</div>;
+        return <div className="value">XX</div>;
       }
   }
 
