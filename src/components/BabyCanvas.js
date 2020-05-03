@@ -255,7 +255,7 @@ class BabyCanvas extends React.Component {
         ( genotype.fatherGene + genotype.motherGene === 'TT' ||
         genotype.fatherGene + genotype.motherGene === 'tt' ) ) {
           return (
-            <div key={ genotype.id }><span style={{ marginRight: '8px', fontWeight: '600' }}>{ genotype.name }:</span> { genotype.inheritedGeneName } ( XX )</div>
+            <div key={ genotype.id }><span style={{ marginRight: '8px', fontWeight: '600' }}>{ genotype.name }:</span> { genotype.inheritedGeneName } ( XY )</div>
           );
         }
 
@@ -263,7 +263,7 @@ class BabyCanvas extends React.Component {
         ( genotype.fatherGene + genotype.motherGene === 'Tt' ||
         genotype.fatherGene + genotype.motherGene === 'tT' ) ) {
           return (
-            <div key={ genotype.id }><span style={{ marginRight: '8px', fontWeight: '600' }}>{ genotype.name }:</span> { genotype.inheritedGeneName } ( XY )</div>
+            <div key={ genotype.id }><span style={{ marginRight: '8px', fontWeight: '600' }}>{ genotype.name }:</span> { genotype.inheritedGeneName } ( XX )</div>
           );
         }
 
